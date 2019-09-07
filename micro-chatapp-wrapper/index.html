@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+   <link rel="stylesheet" href="http://localhost:5002/ChatApp.css">
+  <title>Chat App</title>
+</head>
+<body onload="initiateChatApp()">
+<noscript>
+  You need to enable JavaScript to run this app.
+</noscript>
+<div id="react-container"></div>
+
+<script>
+  function initiateChatApp() {
+    const reactEl = document.createElement('react-el');
+    reactEl.setAttribute('onHelloEvt', 'onHelloEvt');
+    reactEl.addEventListener('onHelloEvt', (e) => helloEvent('React'));
+    const reactElContainer =  document.getElementById('react-container')
+    if (reactElContainer.children.length > 0) {
+      reactElContainer.removeChild(reactElContainer.children[0]);
+    }
+    reactElContainer.appendChild(reactEl);
+  }
+
+  function helloEvent(who) {
+    logMessage(who, 'hello');
+  }
+
+  function logMessage(source, msg) {
+    const msgContainer = document.getElementById('messages');
+    msgContainer.innerHTML += `<p><strong>${source}</strong> said ${msg}`;
+  }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.10/custom-elements-es5-adapter.js"></script>
+<script src="http://localhost:5002/main.js"></script>
+</body>
+</html>
+
+
+
+
