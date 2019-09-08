@@ -1,14 +1,14 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import './ChatApp.css';
-import closeIcon from './error.svg';
-import mailIdIcon from './sendmail.svg';
-import jiraTicketIcon from './ticket.svg';
-import FacebookIcon from './facebook.svg';
-import googleIcon from './search.svg';
+// import closeIcon from './error.svg';
+// import mailIdIcon from './sendmail.svg';
+// import jiraTicketIcon from './ticket.svg';
+// import FacebookIcon from './facebook.svg';
+// import googleIcon from './search.svg';
 // import twitterIcon from './twitter.svg';
 // import emailIcon from './email.svg';
-import convIcon from './chat.svg';
+// import convIcon from './chat.svg';
 
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import GoogleLogin from 'react-google-login';
