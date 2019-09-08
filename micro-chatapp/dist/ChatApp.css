@@ -10276,6 +10276,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .error-svg{
     enable-background:new 0 0 52 52;
+    margin-top:10px;
 }
 .chat-bubble {
     font-size: 20px;
