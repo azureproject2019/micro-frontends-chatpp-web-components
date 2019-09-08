@@ -36,7 +36,7 @@ export class ChatApp extends React.Component {
             userId : new Date().getTime(),
             toEmailModalOpen : false,
             isJiraModalOpened : false,
-            isChatModalOpened : true,
+            isChatModalOpened : false,
             toEmailAddress : '',
             isAuthenticated : false,
             jira : [{
@@ -220,9 +220,7 @@ export class ChatApp extends React.Component {
           this.setState({isJiraModalOpened: isJiraModalOpened});
       }
       const handleChatModalClick = (isChatModalOpened) => {
-          if(this.state.isAuthenticated){
               this.setState({isChatModalOpened: !isChatModalOpened});
-          }
       }
 
 
@@ -285,10 +283,10 @@ export class ChatApp extends React.Component {
                           </svg>
                       </div>
                   </div>
-                  <div className="chat-button pulse"  >
+                  <div className="chat-button pulse"  onClick={() => handleChatModalClick(this.state.isChatModalOpened)}  >
                       {/* <img className="chat-icon" src={convIcon}/> */}
                         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                        	 viewBox="0 0 477.6 477.6" className="chat-svg"  onClick={() => handleChatModalClick(this.state.isChatModalOpened)} width="60%" height="60%">
+                        	 viewBox="0 0 477.6 477.6" className="chat-svg" width="60%" height="60%">
                         <g>
                         	<g>
                         		<path className="mail-path" d="M407.583,70c-45.1-45.1-105-70-168.8-70s-123.7,24.9-168.8,70c-87,87-93.3,226-15.8,320.2c-10.7,21.9-23.3,36.5-37.6,43.5
