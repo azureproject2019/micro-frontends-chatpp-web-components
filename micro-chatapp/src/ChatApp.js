@@ -27,6 +27,7 @@ import GraphComponent from './Graph';
 import { BrowserRouter } from 'react-router-dom';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import './Sidebar.css';
+import GridDetail from './GridDetail';
 export class ChatApp extends React.Component {
 
   static propTypes = {
@@ -277,13 +278,13 @@ export class ChatApp extends React.Component {
                 {/* <SideNav.Toggle /> */}
                 <SideNav.Nav>
                     <NavItem className="sidebarNavItems" eventKey="charts">
-                        <NavIcon title="User">
+                        <NavIcon title="Grid">
                             <Link to="/" style={{paddingRight:"0"}}><img src="https://nocc.azurepower.com/images/menu/Loading.png"  alt="icon" className="topnavImgLeft" style={{ width: '3em' }} /></Link>
                         </NavIcon>
                     </NavItem>
                     <NavItem className="sidebarNavItems"  eventKey="dashboard">
-                        <NavIcon title="Dashboard">
-                            <Link to="/" style={{paddingRight:"0"}}><img src="https://nocc.azurepower.com/images/menu/Line-Chart.png" alt="Analytics" style={{width:" 3em"}}/></Link>
+                        <NavIcon title="Graph">
+                            <Link to="/Graph" style={{paddingRight:"0"}}><img src="https://nocc.azurepower.com/images/menu/Line-Chart.png" alt="Analytics" style={{width:" 3em"}}/></Link>
                         </NavIcon>
                     </NavItem>
                 </SideNav.Nav>
@@ -291,17 +292,12 @@ export class ChatApp extends React.Component {
 
             <div  style={{paddingLeft:"75px"}}>
 
-                <div style={{paddingTop:"10px"}}>
-                    <Form.Label style={{padding:"5px 10px"}}>Type</Form.Label>
-                    <select className="form-control">
-                        <option>Column</option>
-                        <option>Pie</option>
-                        <option>Graph</option>
-                    </select>
-
-                </div>
-
-                <GraphComponent/>
+               
+                <Switch>
+                <Route exact path="/" component={GridDetail} />
+                <Route exact path="/Graph" component={GraphComponent} />
+                </Switch>
+                {/* <GraphComponent/> */}
 
             </div>
 
